@@ -15,12 +15,7 @@ public class Funcion {
     //Ejemplos de funciones puras
     public void funcionPura() {
         System.out.println("Inicio Ejemplos de funciones puras");
-        Function<Integer,Integer> calcularCuadrado = new Function<Integer,Integer>(){
-            @Override
-            public Integer apply(Integer o) {
-                return o * o;
-            }
-        };
+        Function<Integer,Integer> calcularCuadrado = calcularCuadrado();
         System.out.println("\tEl resultado de aplicar la función calcularCuadrado a 8 es:  " + calcularCuadrado.apply(8));
         System.out.println("Fin Ejemplos de funciones puras");
     }
