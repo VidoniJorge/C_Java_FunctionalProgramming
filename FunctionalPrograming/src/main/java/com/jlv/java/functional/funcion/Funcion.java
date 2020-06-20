@@ -13,21 +13,21 @@ public class Funcion {
     }
 
     //Ejemplos de funciones puras
-    public void funcionPura() {
+    private void funcionPura() {
         System.out.println("Inicio Ejemplos de funciones puras");
         Function<Integer,Integer> calcularCuadrado = calcularCuadrado();
         System.out.println("\tEl resultado de aplicar la función calcularCuadrado a 8 es:  " + calcularCuadrado.apply(8));
         System.out.println("Fin Ejemplos de funciones puras");
     }
 
-    public void funcionOrdenMayor(){
+    private void funcionOrdenMayor(){
         System.out.println("Inicio Ejemplos de funciones de orden mayor");
-        Function<Integer,Function> procesoCuadrado = this.calcularCuadrado();
+        Function<Integer,Integer> procesoCuadrado = this.calcularCuadrado();
         procesarCalculo(procesoCuadrado, 8);
         System.out.println("Fin Ejemplos de funciones de orden mayor");
     }
 
-    private void procesarCalculo(Function proceso, Integer valor){
+    private void procesarCalculo(Function<Integer,Integer> proceso, Integer valor){
         BiFunction<Function,Integer,Integer> procesoCalculo =  new BiFunction<Function,Integer, Integer>(){
             public Integer apply(Function o, Integer valor) {
                 return (Integer) o.apply(valor);
@@ -45,7 +45,7 @@ public class Funcion {
         };
     }
 
-    public void imprimirLineasSeparadoras(){
+    private void imprimirLineasSeparadoras(){
         System.out.println("*****");
         System.out.println("*****");
     }
