@@ -10,6 +10,7 @@ public class Funcion {
         func.funcionPura();
         func.imprimirLineasSeparadoras();
         func.funcionOrdenMayor();
+        func.ejemploBiFunction();
     }
 
     //Ejemplos de funciones puras
@@ -48,6 +49,16 @@ public class Funcion {
     private void imprimirLineasSeparadoras(){
         System.out.println("*****");
         System.out.println("*****");
+    }
+
+    private void ejemploBiFunction(){
+        BiFunction<String, Integer, String> formateador = new BiFunction<String, Integer, String>(){
+            @Override
+            public String apply(String texto, Integer espacios){
+                return String.format("%" + espacios + "s",texto);
+            }
+        };
+        System.out.println(formateador.apply("Formateador",20));
     }
 
 }
