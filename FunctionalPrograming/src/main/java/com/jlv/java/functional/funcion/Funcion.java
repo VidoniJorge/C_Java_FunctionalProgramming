@@ -1,5 +1,7 @@
 package com.jlv.java.functional.funcion;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -59,6 +61,22 @@ public class Funcion {
             }
         };
         System.out.println(formateador.apply("Formateador",20));
+    }
+
+    private void ejemploTriFunction(){
+        Function<Integer,String> addCeros = x -> x < 10 ? "0" + x : String.valueOf(x);
+
+        TriFunction<Integer,Integer,Integer, LocalDate> parseDate =
+                (day, month,year) -> LocalDate.parse(year + "-" +
+                        addCeros.apply(month) + "-" + addCeros.apply(day));
+
+        TriFunction<Integer,Integer,Integer,Integer> calculateAge =
+                (day, month, year) -> Period.between(
+                        parseDate.apply(day, month, year),
+                        LocalDate.now()
+                ).getYears();
+
+        System.out.println(calculateAge.apply(19, 10, 1983));
     }
 
 }
