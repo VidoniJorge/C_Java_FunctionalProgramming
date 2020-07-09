@@ -14,3 +14,9 @@ La aplicación **job-search**, es una app de línea de comando la cual se conect
 > job-search java --full-time
 
 > job-search java --markdown
+
+## Dependencias
+
+JCommander: Esta librería toma los argumentos que se le pasan por consola y los convierte a objetos de Java.
+Feign Core: Esta librería hace peticiones web.
+Feign Gson: Esta librería convierte los JSON que recibe de la petición a objetos y clases en Java.
