@@ -1,9 +1,8 @@
-package com.jlv.java.functional.Streams;
+package com.jlv.java.functional.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class StreamsAplicacion {
     public static void main(String[] args) {
